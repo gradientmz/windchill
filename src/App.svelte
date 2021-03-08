@@ -9,15 +9,20 @@ This was my first project using Svelte! Completed 3/7/2021 -->
 	var windchillresult = 0;
 	var temp = "";
 	var speed = "";
+	var letter = "c";
 	
 	function windchill() {
 		if (system == "metric") {
-			var formulametric = `13.12+0.6215${temp}-11.37*${speed}^0.16+0.3965*${temp}*${speed}^0.16`
+			letter = "c"
+			var formulametric = `13.12+0.6215*${temp}-11.37*(${speed}^0.16)+0.3965*${temp}*(${speed}^0.16)`
 			windchillresult = math.round(math.evaluate(formulametric), 2)
+			console.log("metric")
 		}
-		if (system == "imperial") {
-			var formulaimperial = `35.74+0.6215${temp}-35.75*${speed}^0.16+0.4275*${temp}*${speed}^0.16`
+		else if (system == "imperial") {
+			letter = "f"
+			var formulaimperial = `35.74+0.6215*${temp}-35.75*(${speed}^0.16)+0.4275*${temp}*(${speed}^0.16)`
 			windchillresult = math.round(math.evaluate(formulaimperial), 2)
+			console.log("imperial")
 		}
 		console.log("Windchill triggered!")
 		console.log(windchillresult)
@@ -192,12 +197,7 @@ This was my first project using Svelte! Completed 3/7/2021 -->
 		Calculate
 		</button>
 	<h2 class="output">
-		{#if system == "metric"}
-			Windchill: {windchillresult}c
-		{/if}
-		{#if system == "imperial"}
-			Windchill: {windchillresult}f
-		{/if}
+		Windchill (approx): {windchillresult}{letter}
 	</h2>
 	<a class="codetext" href="https://svelte.dev/repl/148566d93a8948eb9b6e9f79500e4d97?version=3.35.0">The code (with formula!)</a>
 </container>	
