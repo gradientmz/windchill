@@ -149,12 +149,13 @@ This was my first project using Svelte! Completed 3/7/2021 -->
 	}
 </style>
 
+<svelte:head>
+	<script src="https://unpkg.com/mathjs@9.2.0/lib/browser/math.js"></script>
+	<script src="https://kit.fontawesome.com/1304ec19c5.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+</svelte:head>
+
 <body>
-	<head>
-		<script src="https://unpkg.com/mathjs@9.2.0/lib/browser/math.js"></script>
-		<script src="https://kit.fontawesome.com/1304ec19c5.js" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-	</head>
 <container data-tilt data-tilt-scale="1.05" data-tilt-perspective="2000">
 	<h1 class="title">Windchill</h1>
 	<h4 class="subtitle">
