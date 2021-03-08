@@ -15,9 +15,9 @@ This was my first project using Svelte! Completed 3/7/2021 -->
 			var formulametric = `13.12+0.6215${temp}-11.37*${speed}^0.16+0.3965*${temp}*${speed}^0.16`
 			windchillresult = math.round(math.evaluate(formulametric), 2)
 		}
-		else if (system == "imperial") {
+		if (system == "imperial") {
 			var formulaimperial = `35.74+0.6215${temp}-35.75*${speed}^0.16+0.4275*${temp}*${speed}^0.16`
-			windchillresult = math.round((math.evaluate(formulaimperial)*(9/5)+32), 2)
+			windchillresult = math.round(math.evaluate(formulaimperial), 2)
 		}
 		console.log("Windchill triggered!")
 		console.log(windchillresult)
